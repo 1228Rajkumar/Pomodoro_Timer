@@ -1,0 +1,137 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body">
+  <div class="main-page" id="mainpage">
+    <div class="error-page" id="error">
+      <h3>Sorry! Invalid Input</h3>
+    </div>
+    <div class="first-page" id="fi-page">
+      <div class="nav-page">
+        <h3>Pomofocus</h3>
+        <div class="seting">
+          <i class="fa-sharp fa-solid fa-gear" id="setingic" onclick="moveSetingPage()"></i>
+        </div>
+      </div>
+      <div class="option">
+        <span id="pomo">Pomodoro</span>
+        <span id="short">Short Break</span>
+        <span id="lonbrak">Long Break</span>
+      </div>
+      <div class="clock" id="clock">
+        <span id="miniute">25</span><span>:</span><span id="seconds">00</span>
+      </div>
+      <div class="task">
+        <h1 id="work"></h1>
+      </div>
+      <div class="pause">
+        <i class="fa-solid fa-caret-right reload" id="pauseicon" onclick="pauseButton()"></i>
+        <i class="fa-sharp fa-solid fa-rotate-right reload" id="restart" onclick="reload()"></i>
+      </div>
+    </div>
+    <div class="second-page" id="sec-page">
+      <div class="set-nav">
+        <h3>TIMER SETING</h3>
+        <i class="fa-solid fa-xmark" id="closebtn" onclick="closeSetingpage()"></i>
+      </div>
+      <div class="time-option">
+        <h3>Time (minutes)</h3>
+        <div class="fix-time">
+          <div>
+            <label>Pomodoro</label>
+
+            <input type="number" id="pomo-time" value="25" />
+          </div>
+          <div>
+            <label>Short Break</label>
+            <input type="number" id="short-time" value="2" />
+          </div>
+          <div>
+            <label>Long Break</label>
+            <input type="number" id="long-time" value="15" />
+          </div>
+        </div>
+      </div>
+      <div class="long-break">
+        <h3>Long Break interval</h3>
+        <input type="number" id="long" value="1">
+      </div>
+      <div class="sugges alarm" id="Alarm" onclick="moveSoundpage()">
+        <h3>Alarm sound</h3>
+        <i class="fa-solid fa-chevron-right" id="sound-arrow"></i>
+      </div>
+      <div class="sugges theme" onclick="moveThemepage()">
+        <h3>Themes</h3>
+        <i class="fa-solid fa-chevron-right" id="theme-arrow"></i>
+      </div>
+      <div class="work-box">
+        <input type="text" id="write-work" placeholder="Enter your task" />
+      </div>
+      <div class="okbtn">
+        <button type="button" onclick="closeSetingpage()">OK</button>
+      </div>
+    </div>
+    <div class="thired-page" id="soun-seting">
+      <div class="set-nav">
+        <h3>SOUND SETING</h3>
+        <i class="fa-solid fa-xmark" id="closebtn2" onclick="closeSoundpage()"></i>
+      </div>
+      <div class="soundbtn">
+        <h3>SOUND</h3>
+        <label class="btn" onclick="moveSoundbtn()" id="movebox2">
+          <div id="soundmove"></div>
+        </label>
+      </div>
+      <div class="sounopt selectoption">
+        <h3>MUSIC</h3>
+        <select id="secelt-music">
+          <option value="2">Rooster crowing</option>
+          <option value="4">Retro game Tone</option>
+          <option value="6">Do Mi So Tone</option>
+          <option value="8">High Sound Tone</option>
+        </select>
+      </div>
+      <div class="okbtn">
+        <button type="button" onclick="closeSoundpage()">OK</button>
+      </div>
+    </div>
+    <div class="fourth-page" id="theme-seting">
+      <div class="set-nav">
+        <h3>Theme SETING</h3>
+        <i class="fa-solid fa-xmark" id="closebtn3" onclick="closeThemepage()"></i>
+      </div>
+      <div class="darkbtn">
+        <h3>Dark Mode</h3>
+        <label class="btn" onclick="moveDarkbtn()" id="movebox3">
+          <div id="darkmove"></div>
+        </label>
+      </div>
+      <div class="themeopt selectoption">
+        <h3>Theme</h3>
+        <select id="secelt-theme">
+          <option value="2">Nature</option>
+          <option value="4">Flower</option>
+          <option value="6">Wall</option>
+          <option value="8">Winter Snow</option>
+        </select>
+      </div>
+      <div class="okbtn">
+        <button type="button" onclick="closeThemepage()">OK</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+<script src="pomoapp.js"></script>
+
+</html>
